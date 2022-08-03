@@ -10,7 +10,11 @@
 .container {
   width: 1140px;
   padding: 0px 15px;
-  margin: auto;
+  margin: auto !important;
+}
+
+body {
+  background: hsl(207, 26%, 17%);
 }
 
 
