@@ -4,7 +4,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-     <h1>Flag api project</h1>
+     <div className="container">
+      <h1>This is an example</h1>
+     </div>
     </div>
   );
 }
