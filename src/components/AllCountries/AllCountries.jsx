@@ -52,7 +52,23 @@ const AllCountries = () => {
      {/* bottom country */}
 
      <div className="country__bottom">
+        {isLoading && !error && <h4>Loading....</h4> }
+        {error && !isLoading && <h4>{error}</h4> }
 
+        {/* map method implimented  */}
+        {
+          countries?.map(country=>(
+            <div className='country__card'>
+              <div className='country__img'>
+                <img src={country.flags.png} alt=''/>
+              </div>
+
+              <div className='country__data'>
+                <h3>{country.name.common}</h3>
+              </div>
+            </div>
+          ))
+        }
      </div>
 
   </div>
