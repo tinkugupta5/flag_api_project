@@ -25,7 +25,9 @@ const AllCountries = () => {
           setCountries(data);
     
           setIsLoading(false);
-        } catch (error) {
+        } 
+        
+        catch (error) {
           setIsLoading(false);
           setError(error.message);
         }
@@ -65,6 +67,9 @@ const AllCountries = () => {
 
               <div className='country__data'>
                 <h3>{country.name.common}</h3>
+                <h6>Population:{country.population}</h6>
+                <h6>Region:{country.region}</h6>
+                <h6>Capital:{country.capital}</h6>
               </div>
             </div>
           ))
