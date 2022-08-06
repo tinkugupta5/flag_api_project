@@ -1,10 +1,24 @@
-import React,{useState} from 'react'
+import React, { useState } from "react";
 
+const SearchInput = ({ onSearch }) => {
+  const [input, setInput] = useState("");
 
-const SearchInput = () => {
-  return <form action="">
-    <input type='text' placeholder='Search a country.....'/>
-  </form>
-}
+  const submitHandler = (e) => {
+    e.preventDefault();
 
-export default SearchInput
+    onSearch(input);
+  };
+
+  return (
+    <form onSubmit={submitHandler}>
+      <input
+        type="text"
+        placeholder="Search a country......"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+    </form>
+  );
+};
+
+export default SearchInput;
