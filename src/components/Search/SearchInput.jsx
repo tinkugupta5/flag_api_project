@@ -5,7 +5,6 @@ const SearchInput = ({ onSearch }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
     onSearch(input);
   };
 
@@ -22,3 +21,4 @@ const SearchInput = ({ onSearch }) => {
 };
 
 export default SearchInput;
+
