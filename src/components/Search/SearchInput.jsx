@@ -16,6 +16,7 @@ const SearchInput = ({ onSearch }) => {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
+      
     </form>
   );
 };
