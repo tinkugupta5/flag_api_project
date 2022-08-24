@@ -5,7 +5,6 @@ import SearchInput from '../Search/SearchInput';
 const AllCountries = () => {
 
     // define state 
-
     const [countries,setCountries] = useState([]);
     const [isLoading,setIsLoading] = useState(true);
     const [error,setError] = useState('');
