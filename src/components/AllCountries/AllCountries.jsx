@@ -27,7 +27,6 @@ const AllCountries = () => {
       };
 
       // search input value fetch ( search countries flag from country api )
-
       const getCountryByName = async (countryName) => { 
         try {
           const res = await fetch(`${apiURL}/name/${countryName}`);
@@ -43,14 +42,12 @@ const AllCountries = () => {
       };
 
     // step second use effect 
-
         useEffect(()=>{
             getAllCountries();
         },[]);
 
 
   return <div className="all__country_wrapper">
-
     {/* top country */}
      <div className="country__top">
         <div className='search'>
