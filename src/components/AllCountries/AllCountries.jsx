@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { apiURL } from '../util/api'
 import SearchInput from '../Search/SearchInput';
+import FilterCountry from '../FilterCountry/FilterCountry';
 
 const AllCountries = () => {
 
@@ -41,6 +42,19 @@ const AllCountries = () => {
         }
       };
 
+      const getCountryByRegion = async (regionName) => {
+        try {
+          const res = await fetch(`${apiURL}/region/${regionName}`);
+          if (!res.ok) throw new Error("Failed..........");
+          const data = await res.json();
+          setCountries(data);
+          setIsLoading(false);
+        } catch (error) {
+          setIsLoading(false);
+          setError(false);
+        }
+      };
+
     // step second use effect 
         useEffect(()=>{
             getAllCountries();
@@ -53,7 +67,16 @@ const AllCountries = () => {
         <div className='search'>
           <SearchInput onSearch={getCountryByName} />
         </div>
+
+
+        <div className="filter">
+        <div className='search'>
+          <FilterCountry onSelect={getCountryByRegion} />
+        </div>
      </div>
+     </div>
+
+    
      
      {/* bottom country */}
      <div className="country__bottom">
