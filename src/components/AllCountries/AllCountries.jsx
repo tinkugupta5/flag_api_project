@@ -3,6 +3,8 @@ import { apiURL } from '../util/api'
 import SearchInput from '../Search/SearchInput';
 import FilterCountry from '../FilterCountry/FilterCountry';
 
+import { Link } from 'react-router-dom';
+
 const AllCountries = () => {
 
     // define state 
@@ -12,7 +14,7 @@ const AllCountries = () => {
 
     // api value  extraction machine of countries data
 
-    const getAllCountries = async () => {
+    const getAllCountries = async () => { 
         try {
           const res = await fetch(`${apiURL}/all`);  
           if (!res.ok) throw new Error("Something went wrong!");   
@@ -68,7 +70,6 @@ const AllCountries = () => {
           <SearchInput onSearch={getCountryByName} />
         </div>
 
-
         <div className="filter">
         <div className='search'>
           <FilterCountry onSelect={getCountryByRegion} />
@@ -86,8 +87,9 @@ const AllCountries = () => {
         {/* map method implimented  */}
         
         {
-          countries?.map(country=>(
-            <div className='country__card'>
+          countries?.map((country)=>(
+            <Link to={`/country/${country.name.common}`}>
+             <div className='country__card'>
               <div className='country__img'>
                 <img src={country.flags.png} alt=''/>
               </div>
@@ -99,6 +101,8 @@ const AllCountries = () => {
                 <h6>Capital:{country.capital}</h6>
               </div>
             </div>
+            
+            </Link>
           ))
         }
      </div>
