@@ -13,22 +13,15 @@ function App() {
         <h5>Where in the world</h5>
      </div>
      </div>
-
      {/* end heading header */}
-
      <div className='container'>
       <Routes>
         {/* route 1 */}
       <Route path='/' element={<AllCountries/>} />
-
         {/* route 2 */}
         <Route path='/country/:countryName' element={<CountryInfo/>} />
-
-      
       </Routes>
-      
      </div>
-    
     </>
   );
 }

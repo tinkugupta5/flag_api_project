@@ -13,7 +13,6 @@ const AllCountries = () => {
     const [error,setError] = useState('');
 
     // api value  extraction machine of countries data
-
     const getAllCountries = async () => { 
         try {
           const res = await fetch(`${apiURL}/all`);  
@@ -49,6 +48,7 @@ const AllCountries = () => {
           const res = await fetch(`${apiURL}/region/${regionName}`);
           if (!res.ok) throw new Error("Failed..........");
           const data = await res.json();
+          console.log("this is filter",data);
           setCountries(data);
           setIsLoading(false);
         } catch (error) {
@@ -83,9 +83,7 @@ const AllCountries = () => {
      <div className="country__bottom">
         {isLoading && !error && <h4>Loading....</h4> }
         {error && !isLoading && <h4>{error}</h4> }
-
         {/* map method implimented  */}
-        
         {
           countries?.map((country)=>(
             <Link to={`/country/${country.name.common}`}>
@@ -100,8 +98,7 @@ const AllCountries = () => {
                 <h6>Region:{country.region}</h6>
                 <h6>Capital:{country.capital}</h6>
               </div>
-            </div>
-            
+            </div>           
             </Link>
           ))
         }
