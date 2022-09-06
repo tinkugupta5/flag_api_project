@@ -59,7 +59,7 @@ const AllCountries = () => {
 
     // step second use effect 
         useEffect(()=>{
-            getAllCountries();
+        getAllCountries();
         },[]);
 
 
