@@ -21,7 +21,7 @@ const AllCountries = () => {
           console.log(data);
           setCountries(data);
           setIsLoading(false);
-        } 
+         } 
         catch (error) {
           setIsLoading(false);
           setError(error.message);
@@ -36,7 +36,7 @@ const AllCountries = () => {
           const data = await res.json();
           setCountries(data);
           setIsLoading(false);
-        } 
+            } 
         catch (error) {
           setIsLoading(false);
           setError(error.message);
@@ -51,7 +51,8 @@ const AllCountries = () => {
           console.log("this is filter",data);
           setCountries(data);
           setIsLoading(false);
-        } catch (error) {
+          } 
+        catch (error) {
           setIsLoading(false);
           setError(false);
         }
